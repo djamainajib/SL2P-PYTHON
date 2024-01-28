@@ -11,5 +11,6 @@ The outputted product contains:
 -	Estimates of the selected vegetation variable, 
 -	the uncertainty of estimates,  
 -	SL2P inputs flag map,    
--	SL2P outputs flag map.  
+-	SL2P outputs flag map.
+
 A test dataset is provided for a quick test of SL2P_python as well as for comparison of outputs to the corresponding product obtained using the original SL2P version implemented on the Sentinel Application Platform (SNAP). 
