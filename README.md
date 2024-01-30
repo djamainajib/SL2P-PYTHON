@@ -3,6 +3,8 @@ SL2P_python is a python implementation of the Simplified Level 2 Product Prototy
 
 SL2P is designed to estimate vegetation biophysical variables from Sentinel-2 (S2) MSI L2A multi-spectral images: leaf area index (LAI), fraction canopy cover (FCOVER), fraction of absorbed photosynthetically active radiation (FAPAR), canopy chlorophyll content (CCC) and canopy water content (CWC), in addition to the Albedo and the directional area scattering factor (DASF) not considered in the original SL2P version. 
 
+SL2P fCOVER, fAPAR and LAI has been validated using in-situ fiducial reference measurements ([Djamai et al., 2018](https://www.sciencedirect.com/science/article/pii/S0034425719301117?via%3Dihub); [Brown et al., 2021](https://www.sciencedirect.com/science/article/pii/S0924271621000617); [Fernandes et al. 2023](https://www.sciencedirect.com/science/article/pii/S0034425723001517?via%3Dihub)).  Product users should account for documented uncertainty and may wish to apply bias corrections documented in these studies.
+
 
 The user must specify:
 -	the location of S2 to be used (locally saved).
