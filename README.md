@@ -13,10 +13,15 @@ The user must specify:
 
 The provided solution read the S2 image (SAFE format), prepare the SL2P input data (including data re-sampling, data scaling …) run SL2P, and export products in GeoTIFF product.
 The outputted product contains: 
--	Estimates of the selected vegetation variable, 
--	the uncertainty of estimates,  
--	SL2P inputs flag map,    
--	SL2P outputs flag map.  
+
+-	Estimates of the selected vegetation variable in [geophysical units](https://github.com/rfernand387/LEAF-Toolbox/wiki/Visualisation-Outputs) ,
+  
+-	the uncertainty of estimates in [geophysical units](https://github.com/rfernand387/LEAF-Toolbox/wiki/Visualisation-Outputs) ,
+  
+-	SL2P inputs flag map where a value of 0 indicates valid inputs,
+  
+-	SL2P outputs flag map where a value of 0 indicates valid outputs.
+  
 
 A test dataset (https://drive.google.com/drive/folders/11BGcS0OA4EjGYb9XGfBtNPFpdgw10uWI?usp=drive_link) is provided for a quick test of SL2P_python as well as for comparison of outputs to the corresponding product obtained using the original SL2P version implemented on the Sentinel Application Platform (SNAP). 
 
