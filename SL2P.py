@@ -2,7 +2,6 @@ from tools import toolsNets
 from tools import dictionariesSL2P 
 from tools import SL2PV0 
 import numpy 
-import itertools
 from datetime import datetime
 from tools import read_sentinel2_safe_image
 
