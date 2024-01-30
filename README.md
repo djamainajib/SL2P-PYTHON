@@ -14,9 +14,9 @@ The user must specify:
 The provided solution read the S2 image (SAFE format), prepare the SL2P input data (including data re-sampling, data scaling …) run SL2P, and export products in GeoTIFF product.
 The outputted product contains: 
 
--	Estimates of the selected vegetation variable in [geophysical units](https://github.com/rfernand387/LEAF-Toolbox/wiki/Visualisation-Outputs) ,
+-	Estimates of the selected vegetation variable in [geophysical units](https://github.com/rfernand387/LEAF-Toolbox/wiki/Visualisation-Outputs),
   
--	the uncertainty of estimates in [geophysical units](https://github.com/rfernand387/LEAF-Toolbox/wiki/Visualisation-Outputs) ,
+-	the uncertainty of estimates in  [geophysical units](https://github.com/rfernand387/LEAF-Toolbox/wiki/Visualisation-Outputs),
   
 -	SL2P inputs flag map where a value of 0 indicates valid inputs,
   
