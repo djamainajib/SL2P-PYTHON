@@ -20,3 +20,12 @@ The outputted product contains:
 
 A test dataset (https://drive.google.com/drive/folders/11BGcS0OA4EjGYb9XGfBtNPFpdgw10uWI?usp=drive_link) is provided for a quick test of SL2P_python as well as for comparison of outputs to the corresponding product obtained using the original SL2P version implemented on the Sentinel Application Platform (SNAP). 
 
+Dependencies:
+------------
+rasterio 1.3.9
+matplotlib 3.7.2
+datetime 5.4
+skimage 0.20.0
+tqdm 4.65.0
+scipy 1.11.1
+pickle 0.0.12
