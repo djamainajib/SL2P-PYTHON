@@ -1,0 +1,28 @@
+.
+│   run_SL2P.ipynb                          #
+│   SL2P.py
+│
+├───tools
+│        dictionariesSL2P.py
+│        read_sentinel2_safe_image.py
+│        SL2PV0.py
+│        toolsNets.py
+├───nets (## Neural network files exported from Matlab for LEAF toolbox)
+│       Parameter_file_sl2p.pkl
+│       S2_SL2P_WEISS_ORIGINAL_DOMAIN.pkl
+│       s2_sl2p_weiss_or_prosail_10m_domain.pkl
+│       s2_sl2p_weiss_or_prosail_10m_NNT1_Single_0_1.pkl
+│       s2_sl2p_weiss_or_prosail_10m_NNT1_Single_0_1_errors.pkl
+│       s2_sl2p_weiss_or_prosail_NNT3_Single_0_1.pkl
+│       s2_sl2p_weiss_or_prosail_NNT3_Single_0_1_error.pkl
+│       weiss_or_prosail3_NNT3_Single_0_1_RANGE.pkl
+│
+├───testdata
+    │   S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613.SAFE.zip
+    └───sl2p_snap_products
+           S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613_CCC.tif
+           S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613_CWC.tif
+           S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613_fAPAR.tif
+           S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613_fCOVER.tif
+           S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613_LAI.tif
+
