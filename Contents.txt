@@ -1,12 +1,13 @@
 .
-│   run_SL2P.ipynb                          #
-│   SL2P.py
+│   run_SL2P.ipynb                         # main interface : Jupyter Notebook
+│   SL2P.py                                # SL2P python script. It contain function for preparing sl2p input data, making nets, and running SL2P,.....
 │
-├───tools
-│        dictionariesSL2P.py
-│        read_sentinel2_safe_image.py
-│        SL2PV0.py
-│        toolsNets.py
+├───tools (## used tools) 
+│        dictionariesSL2P.py               # SL2P parameters  
+│        read_sentinel2_safe_image.py      # Tool for reading Sentinel-2 MSI image in safe format (20m or 10m resolution)
+│        SL2PV0.py                         # Getting nets coefficients from  nets
+│        toolsNets.py                      # Making and applying nets
+
 ├───nets (## Neural network files exported from Matlab for LEAF toolbox)
 │       Parameter_file_sl2p.pkl
 │       S2_SL2P_WEISS_ORIGINAL_DOMAIN.pkl
@@ -17,9 +18,10 @@
 │       s2_sl2p_weiss_or_prosail_NNT3_Single_0_1_error.pkl
 │       weiss_or_prosail3_NNT3_Single_0_1_RANGE.pkl
 │
-├───testdata
+├───testdata (## Sentinel-2 MSI L2A data in safe format used for testing [please unzip])
     │   S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613.SAFE.zip
-    └───sl2p_snap_products
+    │
+    └───sl2p_snap_products (## vegetation biophysical variables maps obtained from the same Sentinel-2 MSI L2A image using SL2P/SNAP implementation [for comparison with])
            S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613_CCC.tif
            S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613_CWC.tif
            S2B_MSIL2A_20230831T155829_N0509_R097_T18TVR_20230831T203613_fAPAR.tif
