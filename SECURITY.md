@@ -1,21 +1,11 @@
-# Security Policy
+([Français](#sécurité))
 
-## Supported Versions
+# Security
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+**Do not post any security issues on the public repository!** Security vulnerabilities must be reported by email to najib.djamai@nrcan-rncan@gc.ca
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+______________________
 
-## Reporting a Vulnerability
+## Sécurité
 
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+**Ne publiez aucun problème de sécurité sur le dépôt publique!** Les vulnérabilités de sécurité doivent être signalées par courriel à najib.djamai@nrcan-rncan@gc.ca
