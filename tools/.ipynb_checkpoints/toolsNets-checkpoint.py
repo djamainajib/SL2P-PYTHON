@@ -1,13 +1,10 @@
 from tools import toolsNets
-import numpy as np
+import numpy 
 
 
-# parse CSV file with list of networks for a selected variable (one network for each landclass partition)
 def makeNetVars(asset, numNets, variableNum): 
-    # get selected network 
-    filtered_features =[asset['features'][variableNum]]  # check with Richard (numNets?????????????????????)
-    for netNum in range(numNets):
-        netVars =makeNets(filtered_features, netNum)
+    filtered_features =[ff for ff in asset['features'] if ff['properties']['tabledata3']==variableNum+1]
+    netVars = [makeNets(filtered_features, netNum) for netNum in range(numNets)]
     return netVars
 
 # read coefficients of a network from csv EE asset
@@ -68,29 +65,33 @@ def makeNets(feature, M):
     net["outBias"] = [getCoefs(netData,ind) for ind in range(start,end+1)] 
     return [net]
 
+def wrapperNNets(network, netOptions,imageInput):
+    netList = network[netOptions['variable']-1]
+    return applyNet(imageInput,netList)
+
 def applyNet(inp,net):
     [d0,d1,d2]=inp.shape
     inp=inp.reshape(d0,d1*d2)
-    inpSlope   =np.array(net[0]['inpSlope'])
-    inpOffset  =np.array(net[0]['inpOffset'])
-    h1wt       =np.array(net[0]['h1wt'])
-    h2wt       =np.array(net[0]['h2wt'])
-    h1bi       =np.array(net[0]['h1bi'])
-    h2bi       =np.array(net[0]['h2bi']) 
-    outBias    =np.array(net[0]['outBias'])
-    outSlope   =np.array(net[0]['outSlope']) 
+    inpSlope   =numpy.array(net[0][0]['inpSlope'])
+    inpOffset  =numpy.array(net[0][0]['inpOffset'])
+    h1wt       =numpy.array(net[0][0]['h1wt'])
+    h2wt       =numpy.array(net[0][0]['h2wt'])
+    h1bi       =numpy.array(net[0][0]['h1bi'])
+    h2bi       =numpy.array(net[0][0]['h2bi']) 
+    outBias    =numpy.array(net[0][0]['outBias'])
+    outSlope   =numpy.array(net[0][0]['outSlope']) 
     
     # input scaling
     l1inp2D=(inp*inpSlope[:,None])+inpOffset[:,None]
 
     # hidden layers
-    l12D=np.matmul(np.reshape(h1wt,[len(h1bi),len(inpOffset)]),l1inp2D)+h1bi[:,None]
+    l12D=numpy.matmul(numpy.reshape(h1wt,[len(h1bi),len(inpOffset)]),l1inp2D)+h1bi[:,None]
 
     # apply tansig 2/(1+exp(-2*n))-1
-    l2inp2D=2/(1+np.exp(-2*l12D))-1
+    l2inp2D=2/(1+numpy.exp(-2*l12D))-1
      
     # purlin hidden layers
-    l22D = np.sum(l2inp2D*h2wt[:,None],axis=0)+h2bi
+    l22D = numpy.sum(l2inp2D*h2wt[:,None],axis=0)+h2bi
 
     # output scaling 
     outputBand = (l22D-outBias[:,None])/outSlope[:,None]

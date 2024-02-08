@@ -235,7 +235,7 @@ def make_outputParams():
         'CCC': {
             'outputScale': 1000,
             'outputOffset': 0,
-            'outputMax': 6
+            'outputMax': 600
         },
         'CWC': {
             'outputScale': 1000,

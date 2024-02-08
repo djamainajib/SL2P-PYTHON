@@ -1,11 +1,10 @@
 from tools import toolsNets
 from tools import dictionariesSL2P 
-from tools import SL2PV0 
+from tools import SL2PV0 as algorithm
 import numpy 
 from datetime import datetime
 from tools import read_sentinel2_safe_image
 
-algorithm=SL2PV0 
 
 def makeModel(algorithm,imageCollectionName,variableName):
     collectionOptions = (dictionariesSL2P.make_collection_options(algorithm))
@@ -14,10 +13,11 @@ def makeModel(algorithm,imageCollectionName,variableName):
     netOptions=networkOptions[variableName][imageCollectionName]
 
     ## Compute numNets
-    numNets =len({k: v for k, v in (colOptions["Network_Ind"]['features'][0]['properties']).items() if k != 'Feature Index'})
-    SL2P_net = [toolsNets.makeNetVars(colOptions["Collection_SL2P"],numNets,netNum) for  netNum in range(colOptions["numVariables"])][netOptions['variable']]
-    errorsSL2P_net = [toolsNets.makeNetVars(colOptions["Collection_SL2Perrors"],numNets,netNum) for  netNum in range(colOptions["numVariables"])][netOptions['variable']]
-    return SL2P_net,errorsSL2P_net
+    numNets =len({k: v for k, v in (colOptions["Network_Ind"]['features'][0]['properties']).items() if k != 'Feature Index'}) 
+    SL2P_nets =[toolsNets.makeNetVars(colOptions["Collection_SL2P"],numNets,netNum) for netNum in range(colOptions['numVariables'])]
+    errorsSL2P_nets =[toolsNets.makeNetVars(colOptions["Collection_SL2Perrors"],numNets,netNum) for netNum in range(colOptions['numVariables'])]
+    
+    return SL2P_nets,errorsSL2P_nets
 
 def prepare_sl2p_inp(s2,variableName,imageCollectionName):
     networkOptions= dictionariesSL2P.make_net_options()
@@ -63,15 +63,15 @@ def SL2P(sl2p_inp,variableName,imageCollectionName,outPath=None):
     colOptions=collectionOptions[imageCollectionName]
     
     # prepare SL2P networks
-    SL2P_net,errorsSL2P_net=makeModel(algorithm,imageCollectionName,variableName) 
-    
+    SL2P,errorsSL2P=makeModel(algorithm,imageCollectionName,variableName) 
+
     # generate sl2p input data flag
     inputs_flag=invalidInput(sl2p_inp,netOptions,colOptions)
        
     # run SL2P
     print('Run SL2P...\nSL2P start: %s' %(datetime.now()))
-    estimate   =toolsNets.applyNet(sl2p_inp,SL2P_net)
-    uncertainty=toolsNets.applyNet(sl2p_inp,errorsSL2P_net)
+    estimate   =toolsNets.wrapperNNets(SL2P      ,netOptions,sl2p_inp)
+    uncertainty=toolsNets.wrapperNNets(errorsSL2P,netOptions,sl2p_inp)
     print('SL2P end: %s' %(datetime.now()))
     
      # generate sl2p output product flag
