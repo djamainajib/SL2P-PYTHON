@@ -27,10 +27,18 @@ A test dataset (https://drive.google.com/drive/folders/11BGcS0OA4EjGYb9XGfBtNPFp
 
 Dependencies:
 ------------
-rasterio 1.3.9
-matplotlib 3.7.2
-datetime 5.4
-skimage 0.20.0
-tqdm 4.65.0
-scipy 1.11.1
-pickle 0.0.12
+- rasterio 1.3.9
+- matplotlib 3.7.2
+- datetime 5.4
+- skimage 0.20.0
+- tqdm 4.65.0
+- scipy 1.11.1
+- pickle 0.0.12
+
+How to Contribute
+See CONTRIBUTING.md
+
+License
+Unless otherwise noted, the source code of this project is covered under Crown Copyright, Government of Canada, and is distributed under the MIT License.
+
+The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see Federal identity requirements.
