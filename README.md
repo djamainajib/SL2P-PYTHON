@@ -37,7 +37,7 @@ Dependencies:
 
 How to contribute?
 ------------
-See CONTRIBUTING.md https://github.com/djamainajib/SL2P_python/blob/main/CONTRIBUTING.md
+See CONTRIBUTING.md [https://github.com/djamainajib/SL2P_python/blob/main/CONTRIBUTING.md]
 
 License:
 ------------
