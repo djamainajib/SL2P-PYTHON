@@ -96,4 +96,4 @@ def invalidInput(image,netOptions,colOptions):
 def invalidOutput(estimate,variableName):
     print('Generating sl2p output product flag')
     var_range=dictionariesSL2P.make_outputParams()[variableName]
-    return numpy.where(estimate<var_range['outputOffset'],1,numpy.where(estimate>var_range['outputMax'],2,0))
+    return numpy.where(estimate<var_range['outputOffset'],1,numpy.where(estimate>var_range['outputMax'],1,0))
