@@ -11,8 +11,8 @@ SL2P fCOVER, fAPAR and LAI has been validated using in-situ fiducial reference m
 
 The user must specify:
 -	the location of S2 to be used (locally saved).
--	the spatial resolution of used data: S2_SR (20-m) or S2_SR_10m (10-m}.
--	the needed vegetation variable: LAI, fAPAR, fCOVER, CCC, CWC, Albedo, or DASF,
+-	the spatial resolution of used data: S2_SR (20-m) or S2_SR_10m (10-m).
+-	the needed vegetation variable: LAI, fAPAR, fCOVER, CCC, CWC or Albedo
 
 The provided solution read the S2 image (SAFE format), prepare the SL2P input data (including data re-sampling, data scaling …) run SL2P, and export products in GeoTIFF product.
 The outputted product contains: 
