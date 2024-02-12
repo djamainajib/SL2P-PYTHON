@@ -35,10 +35,12 @@ Dependencies:
 - scipy 1.11.1
 - pickle 0.0.12
 
-How to Contribute
+How to contribute?
+------------
 See CONTRIBUTING.md
 
-License
+License:
+------------
 Unless otherwise noted, the source code of this project is covered under Crown Copyright, Government of Canada, and is distributed under the MIT License.
 
 The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see Federal identity requirements.
