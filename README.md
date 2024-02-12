@@ -15,7 +15,7 @@ SL2P-PYTHON read the S2 image (SAFE format), prepare the SL2P input data (includ
 The outputted product contains: 
 
 -	Estimates of the selected vegetation variable,
--	the uncertainty of estimates,
+-	Uncertainty of vegetation variable estimates,
 -	SL2P inputs flag map where a value of 0 indicates valid inputs,
 -	SL2P outputs flag map where a value of 0 indicates valid outputs.
   
