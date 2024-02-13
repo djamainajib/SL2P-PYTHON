@@ -17,7 +17,9 @@ SL2P-PYTHON is designed to estimate five vegetation variables (Table 1).
 
 Products are composed of 4-layers and exported in GeoTIFF format (Table 2). 
 
-<font size="8">Table 1: Vegetation variables supported by SL2P-PYTHON</font>
+
+
+<p align="center"> <font size="8">Table 1: Vegetation variables supported by SL2P-PYTHON</font> </p>
 
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
 |---------------------|-------------|:-----:|:-----------------------:|
@@ -29,7 +31,7 @@ Products are composed of 4-layers and exported in GeoTIFF format (Table 2).
 |Albedo	|Black sky shortwave albedo at 10:30am local time	|Ratio	|0 – 0.2|
 
 
-<font size="8">Table 2: SL2P-PYTHON output layers (for one needed vegetation variable)</font>
+<p align="center"> <font size="8">Table 2: SL2P-PYTHON output layers (for one needed vegetation variable)</font> </p>
 
 |Layer                                         |	Description                                              |
 |----------------------------------------------|-----------------------------------------------------------|
