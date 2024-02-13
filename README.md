@@ -20,7 +20,7 @@ GeoTIFF with 4 layers:
 -	SL2P inputs flag map where a value of 0 indicates valid inputs,
 -	SL2P outputs flag map where a value of 0 indicates valid outputs.
 
-#######SL2P-PYTHON output layers (for one needed vegetation variable)
+*SL2P-PYTHON output layers (for one needed vegetation variable)
 -------
 
 
@@ -32,12 +32,12 @@ GeoTIFF with 4 layers:
 |SL2P output flag (Quality Code)               |	0: Valid, 1: estimates out of the nominal variation range|
 
 
-#######Vegetation variables supported by SL2P-PYTHON
+*Vegetation variables supported by SL2P-PYTHON
 -------
 
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
 |---------------------|-------------|:-----:|:-----------------------:|
-|LAI	|Half the total green foliage area per horizontal ground area.	|$m^{2}$ foliage /m^2 ground	|0 - 8|
+|LAI	|Half the total green foliage area per horizontal ground area.	|$m^{2}$ foliage /$m^{2}$ ground	|0 - 8|
 |fCOVER	|Fraction of nadir canopy cover	|Ratio	|0 – 1|
 |fAPAR	|Fraction of absorbed clear sky PAR at 10:30 am local time	|Ratio	|0 – 1|
 |CCC	|Canopy chlorophyll A+B content	|g/$m^{2}$	|0 - 600|
