@@ -1,4 +1,4 @@
-## Welcome to SL2P-PYTHON
+#Welcome to SL2P-PYTHON
 
 
 SL2P-PYTHON is a python implementation of the Simplified Level 2 Product Prototype Processor (SL2P) in [Weiss and Baret (2016)](https://step.esa.int/docs/extra/ATBD_S2ToolBox_L2B_V1.1.pdf) It corresponds to the algorithm implemented in the [LEAf-Toolbox](https://github.com/rfernand387/LEAF-Toolbox) that corrects for bugs in the implemention of SL2P within the European Space Agency Sentinel 2 Toolbox as documented in [Fernandes et al. 2023](https://www.sciencedirect.com/science/article/pii/S0034425723001517?via%3Dihub).
@@ -21,7 +21,7 @@ GeoTIFF with 4 layers:
 -	SL2P outputs flag map where a value of 0 indicates valid outputs.
 
 <font size="5">*SL2P-PYTHON output layers (for one needed vegetation variable)</font>
--------
+
 
 
 |Layer                                         |	Description                                              |
@@ -33,11 +33,11 @@ GeoTIFF with 4 layers:
 
 
 <font size="5">**Vegetation variables supported by SL2P-PYTHON</font>
--------
+
 
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
 |---------------------|-------------|:-----:|:-----------------------:|
-|LAI	|Half the total green foliage area per horizontal ground area.	|$m^{2}$ foliage / $m^{2}$ ground	|0 - 8|
+|LAI	|Half the total green foliage area per horizontal ground area.	|$m^{2}$ foliage / m^{2} ground	|0 - 8|
 |fCOVER	|Fraction of nadir canopy cover	|Ratio	|0 – 1|
 |fAPAR	|Fraction of absorbed clear sky PAR at 10:30 am local time	|Ratio	|0 – 1|
 |CCC	|Canopy chlorophyll A+B content	|g/ $m^{2}$	|0 - 600|
