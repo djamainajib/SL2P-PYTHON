@@ -5,7 +5,7 @@ SL2P-PYTHON is a python implementation of the Simplified Level 2 Product Prototy
 
 SL2P-PYTHON is designed to estimate vegetation biophysical variables (Table 1) at 10 or 20 meters spatial resolution from Sentinel-2 MSI L2A images. 
 
-### Required inputs
+Required inputs
 ---------------
 -	[Sentinel-2 MSI L2A product at ESA SAFE format](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjAxLzdlqmEAxUPAHkGHf0SBh8QFnoECA0QAw&url=https%3A%2F%2Fsentinels.copernicus.eu%2Fweb%2Fsentinel%2Ftechnical-guides%2Fsentinel-2-msi%2Flevel-2a%2Fproduct-formatting%23%3A~%3Atext%3DThe%2520Level%252D2A%2520product%2520has%2Ca%2520manifest.&usg=AOvVaw3l2OL2cIPi5idQJfHwqaRQ&opi=89978449)
 -	The needed vegetation variable (Table 1)
@@ -14,6 +14,7 @@ SL2P-PYTHON is designed to estimate vegetation biophysical variables (Table 1) a
 Outputs
 -------
 SL2P-PYTHON is designed to estimate five vegetation variables (Table 1). 
+
 Products are composed of 4-layers and exported in GeoTIFF format (Table 2). 
 
 <font size="8">Table 1: Vegetation variables supported by SL2P-PYTHON</font>
