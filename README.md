@@ -19,7 +19,7 @@ Products are composed of 4-layers and exported in GeoTIFF format (Table 2).
 
 
 
-<p align="center"> <font size="8">Table 1: Vegetation variables supported by SL2P-PYTHON</font> </p>
+<p align="center"> Table 1: Vegetation variables supported by SL2P-PYTHON </p>
 
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
 |---------------------|-------------|:-----:|:-----------------------:|
@@ -31,7 +31,7 @@ Products are composed of 4-layers and exported in GeoTIFF format (Table 2).
 |Albedo	|Black sky shortwave albedo at 10:30am local time	|Ratio	|0 – 0.2|
 
 
-<p align="center"> <font size="8">Table 2: SL2P-PYTHON output layers (for one needed vegetation variable)</font> </p>
+<p align="center"> Table 2: SL2P-PYTHON output layers (for one needed vegetation variable) </p>
 
 |Layer                                         |	Description                                              |
 |----------------------------------------------|-----------------------------------------------------------|
