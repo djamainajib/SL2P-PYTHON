@@ -19,20 +19,6 @@ Products are composed of 4-layers and exported in GeoTIFF format (Table 2).
 
 <font size="8">Table 1: Vegetation variables supported by SL2P-PYTHON</font>
 
-
-##Title
-
-###[Place 1](#Place-2)<span id="place1">HelloWorld</span>
-
-Hello, this is some text to fill in this, [here](#place2), is a link to the second 
-place.
-
-###Place 2(#Place-1)<span id="place2">HelloWorld</span>
-
-Place one has the fun times of linking here, but I can also link back [here](#place1).
-
-
-
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
 |---------------------|-------------|:-----:|:-----------------------:|
 |LAI	|Half the total green foliage area per horizontal ground area.	|$m^{2} / m^{2}$ |0 - 8|
