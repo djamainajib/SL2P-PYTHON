@@ -20,7 +20,7 @@ GeoTIFF with 4 layers:
 -	SL2P inputs flag map where a value of 0 indicates valid inputs,
 -	SL2P outputs flag map where a value of 0 indicates valid outputs.
 
-*SL2P-PYTHON output layers (for one needed vegetation variable)
+<font size="8">*SL2P-PYTHON output layers (for one needed vegetation variable)</font>
 -------
 
 
@@ -32,7 +32,7 @@ GeoTIFF with 4 layers:
 |SL2P output flag (Quality Code)               |	0: Valid, 1: estimates out of the nominal variation range|
 
 
-*Vegetation variables supported by SL2P-PYTHON
+<font size="8">**Vegetation variables supported by SL2P-PYTHON</font>
 -------
 
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
