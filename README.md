@@ -42,8 +42,9 @@ Products are composed of 4-layers and exported in GeoTIFF format (Table 2).
 
 
 
-  
-A [test dataset](https://drive.google.com/drive/folders/11BGcS0OA4EjGYb9XGfBtNPFpdgw10uWI?usp=drive_link) is provided for a quick test of SL2P_python as well as for comparison of outputs to the corresponding product obtained using the Sentinel Application Platform (SNAP) implementation of SL2P. 
+Test dataset
+------------
+A [test dataset](https://drive.google.com/drive/folders/11BGcS0OA4EjGYb9XGfBtNPFpdgw10uWI?usp=drive_link) is provided for a quick test of SL2P-PYTHON as well as for comparison with the corresponding product obtained using the Sentinel Application Platform (SNAP) implementation of SL2P. 
 
 For more details about SL2P-PYTHON please see [ATBD document](https://github.com/djamainajib/SL2P_python/blob/main/GEOMATICS%20CANADA%20xx%20-%20SL2P%20PYTHON_version_0.docx).
 
