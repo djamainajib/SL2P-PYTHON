@@ -7,7 +7,7 @@ SL2P-PYTHON is designed to estimate vegetation biophysical variables (Table 1) a
 
 ### Required inputs
 ---------------
--	[ESA SAFE format Sentinel-2 Level 2A product](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products)
+-	[Sentinel-2 MSI L2A product at ESA SAFE format](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjAxLzdlqmEAxUPAHkGHf0SBh8QFnoECA0QAw&url=https%3A%2F%2Fsentinels.copernicus.eu%2Fweb%2Fsentinel%2Ftechnical-guides%2Fsentinel-2-msi%2Flevel-2a%2Fproduct-formatting%23%3A~%3Atext%3DThe%2520Level%252D2A%2520product%2520has%2Ca%2520manifest.&usg=AOvVaw3l2OL2cIPi5idQJfHwqaRQ&opi=89978449)
 -	The needed vegetation variable (Table 1)
 -	The needed spatial resolution: S2_SR (for 20-m) / S2_SR_10m (for 10-m)
 
