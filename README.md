@@ -37,10 +37,10 @@ GeoTIFF with 4 layers:
 
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
 |---------------------|-------------|:-----:|:-----------------------:|
-|LAI	|Half the total green foliage area per horizontal ground area.	|$m^{2}$ foliage / m^{2} ground	|0 - 8|
+|LAI	|Half the total green foliage area per horizontal ground area.	|$m^{2} / m^{2}$ |0 - 8|
 |fCOVER	|Fraction of nadir canopy cover	|Ratio	|0 – 1|
 |fAPAR	|Fraction of absorbed clear sky PAR at 10:30 am local time	|Ratio	|0 – 1|
-|CCC	|Canopy chlorophyll A+B content	|g/ $m^{2}$	|0 - 600|
+|CCC	|Canopy chlorophyll A+B content	|$g /m^{2}$	|0 - 600|
 |CWC	|Canopy water content	|g/ $m^{2}$	|0 – 1|
 |Albedo	|Black sky shortwave albedo at 10:30am local time	|Ratio	|0 – 0.2|
 
