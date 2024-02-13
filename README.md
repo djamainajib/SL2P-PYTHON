@@ -39,7 +39,8 @@ Products are composed of 4-layers and exported in GeoTIFF format (Table 2).
 |SL2P output flag (Quality Code)               |	0: Valid, 1: estimates out of the nominal variation range|
 
 ![image](https://github.com/djamainajib/SL2P-PYTHON/assets/33295871/2c42dc0b-2256-4147-860c-48eac8c04813)
-Figure 1: SL2P-PYTHON principles
+
+## Figure 1: SL2P-PYTHON principles
 
 
 
