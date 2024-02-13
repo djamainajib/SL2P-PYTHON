@@ -40,7 +40,8 @@ Products are composed of 4-layers and exported in GeoTIFF format (Table 2).
 
 ![image](https://github.com/djamainajib/SL2P-PYTHON/assets/33295871/2c42dc0b-2256-4147-860c-48eac8c04813)
 
-**:Figure 1: SL2P-PYTHON principles:**
+
+<p align="center"> **:Figure 1: SL2P-PYTHON principles:**</p>
 
 
 
