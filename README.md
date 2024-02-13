@@ -21,12 +21,14 @@ GeoTIFF with 4 layers:
 -	SL2P outputs flag map where a value of 0 indicates valid outputs.
 
 SL2P-PYTHON output layers (for one needed vegetation variable)
-|Layer|	Description|
---------------------
-|Vegetation variable estimate	|Map of vegetation variable| 
-|Uncertainty of vegetation variable estimates	|Map of the uncertainty of vegetation variable|
-|SL2P input flag (Quality Code)	|0: Valid, 1: SL2P input out of SL2P calibration domain|
-|SL2P output flag (Quality Code)|	0: Valid, 1: estimates out of the nominal variation range| 
+|----------------------------------------------|-----------------------------------------------------------|
+|Layer                                         |	Description                                              |
+|----------------------------------------------|-----------------------------------------------------------|
+|Vegetation variable estimate	                 |Map of vegetation variable                                 | 
+|Uncertainty of vegetation variable estimates	 |Map of the uncertainty of vegetation variable              |
+|SL2P input flag (Quality Code)	               |0: Valid, 1: SL2P input out of SL2P calibration domain     |
+|SL2P output flag (Quality Code)               |	0: Valid, 1: estimates out of the nominal variation range|
+|----------------------------------------------|-----------------------------------------------------------|
 
 Vegetation variables supported by SL2P-PYTHON
 Vegetation variable	Description	Unit	Nominal variation range
