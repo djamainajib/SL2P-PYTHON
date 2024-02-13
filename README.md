@@ -16,7 +16,7 @@ Outputs
 -------
 GeoTIFF with 4 layers (Table 1):
 
-<font size="8">*SL2P-PYTHON output layers (for one needed vegetation variable)</font>
+<font size="8">Table 1: SL2P-PYTHON output layers (for one needed vegetation variable)</font>
 
 |Layer                                         |	Description                                              |
 |----------------------------------------------|-----------------------------------------------------------|
@@ -26,7 +26,7 @@ GeoTIFF with 4 layers (Table 1):
 |SL2P output flag (Quality Code)               |	0: Valid, 1: estimates out of the nominal variation range|
 
 
-<font size="8">**Vegetation variables supported by SL2P-PYTHON</font>
+<font size="8">Table 2: Vegetation variables supported by SL2P-PYTHON</font>
 
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
 |---------------------|-------------|:-----:|:-----------------------:|
