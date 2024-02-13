@@ -14,11 +14,7 @@ Required inputs
 
 Outputs
 -------
-GeoTIFF with 4 layers:
--	Estimates of the needed vegetation variable,
--	Uncertainty of vegetation variable estimates,
--	SL2P inputs flag map where a value of 0 indicates valid inputs,
--	SL2P outputs flag map where a value of 0 indicates valid outputs.
+GeoTIFF with 4 layers (Table 1):
 
 <font size="8">*SL2P-PYTHON output layers (for one needed vegetation variable)</font>
 
