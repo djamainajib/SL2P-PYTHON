@@ -6,56 +6,7 @@ from datetime import datetime
 from tools import read_sentinel2_safe_image
 
 
-def makeModel(algorithm,imageCollectionName,variableName):
-    collectionOptions = (dictionariesSL2P.make_collection_options(algorithm))
-    colOptions=collectionOptions[imageCollectionName]
-    networkOptions= dictionariesSL2P.make_net_options()
-    netOptions=networkOptions[variableName][imageCollectionName]
-
-    ## Compute numNets
-    numNets =len({k: v for k, v in (colOptions["Network_Ind"]['features'][0]['properties']).items() if k != 'Feature Index'}) 
-    SL2P_nets =[toolsNets.makeNetVars(colOptions["Collection_SL2P"],numNets,netNum) for netNum in range(colOptions['numVariables'])]
-    errorsSL2P_nets =[toolsNets.makeNetVars(colOptions["Collection_SL2Perrors"],numNets,netNum) for netNum in range(colOptions['numVariables'])]
-    
-    return SL2P_nets,errorsSL2P_nets
-
-def prepare_sl2p_inp(s2,variableName,imageCollectionName):
-    networkOptions= dictionariesSL2P.make_net_options()
-    netOptions=networkOptions[variableName][imageCollectionName]
-    
-    # resample sun and view (sensor) angles
-    print('Resample sun and view (sensor) angles')
-    factor=s2['B03'].shape[0]/s2['SZA'].shape[0]
-    s2['SZA']=read_sentinel2_safe_image.resample_image(s2['SZA'],factor,interpolation='bilinear')
-    s2['SAA']=read_sentinel2_safe_image.resample_image(s2['SAA'],factor,interpolation='bilinear')
-    s2['VZA']=read_sentinel2_safe_image.resample_image(s2['VZA'],factor,interpolation='bilinear')
-    s2['VAA']=read_sentinel2_safe_image.resample_image(s2['VAA'],factor,interpolation='bilinear')
-    #compute Relative Azimuth angle (RAA)
-    s2['RAA']=numpy.absolute(s2['SAA']-s2['VAA'])
-    
-    # Scaling Surface Reflectance bands:/10000
-    print('Scaling Sentinel-2 bands')
-    for band in range(3,len(netOptions['inputBands'])):
-        s2[netOptions['inputBands'][band]]=(s2[netOptions['inputBands'][band]]+netOptions['inputOffset'][band])*netOptions['inputScaling'][band]
-    
-    #compute cos(angles)
-    print('Computing cosSZA, cosVZA and cosRAA')
-    s2['cosSZA']=numpy.cos(numpy.deg2rad(s2['SZA']))
-    s2['cosVZA']=numpy.cos(numpy.deg2rad(s2['VZA']))
-    s2['cosRAA']=numpy.cos(numpy.deg2rad(s2['RAA']))
-    
-    # select  sl2p input bands
-    print('Selecting sl2p input bands')
-    
-    sl2p_inp={}
-    for band in netOptions['inputBands']:
-        sl2p_inp.update({band:s2[band]})
-        
-    # prepare SL2P input data    
-    sl2p_inp=numpy.stack([sl2p_inp[k] for k in sl2p_inp.keys()]) 
-    print('Done!')
-    return sl2p_inp   
-        
+# main SL2P function    
 def SL2P(sl2p_inp,variableName,imageCollectionName,outPath=None):
     networkOptions= dictionariesSL2P.make_net_options()
     collectionOptions = (dictionariesSL2P.make_collection_options(algorithm))
@@ -74,11 +25,60 @@ def SL2P(sl2p_inp,variableName,imageCollectionName,outPath=None):
     uncertainty=toolsNets.wrapperNNets(errorsSL2P,netOptions,sl2p_inp)
     print('SL2P end: %s' %(datetime.now()))
     
-     # generate sl2p output product flag
+    # generate sl2p output product flag
     output_flag=invalidOutput(estimate,variableName)
     print('Done')
     return {variableName:estimate,variableName+'_uncertainty':uncertainty,'sl2p_inputFlag':inputs_flag,'sl2p_outputFlag':output_flag}
 
+#build SL2P needed models (SL2P_nets and errorsSL2P_nets) using toolsNets.py
+def makeModel(algorithm,imageCollectionName,variableName):
+    collectionOptions = (dictionariesSL2P.make_collection_options(algorithm))
+    colOptions=collectionOptions[imageCollectionName]
+    networkOptions= dictionariesSL2P.make_net_options()
+    netOptions=networkOptions[variableName][imageCollectionName]
+
+    ## Compute numNets
+    numNets =len({k: v for k, v in (colOptions["Network_Ind"]['features'][0]['properties']).items() if k != 'Feature Index'}) 
+    SL2P_nets =[toolsNets.makeNetVars(colOptions["Collection_SL2P"],numNets,netNum) for netNum in range(colOptions['numVariables'])]
+    errorsSL2P_nets =[toolsNets.makeNetVars(colOptions["Collection_SL2Perrors"],numNets,netNum) for netNum in range(colOptions['numVariables'])]
+    
+    return SL2P_nets,errorsSL2P_nets
+
+# prepare the sentinel-2 data (dict) to be inputed to sl2p:
+# 1/resample view/sun azimuth and zenith angle, 2/compture Relative azimuth angke RAA, 
+# 3/compte the cosinus of angles, 4/scaling SR data, and 5/build a 3D-ordered data 
+def prepare_sl2p_inp(s2,variableName,imageCollectionName):
+    networkOptions= dictionariesSL2P.make_net_options()
+    netOptions=networkOptions[variableName][imageCollectionName]
+    
+    # resample sun and view (sensor) angles
+    print('Resample sun and view (sensor) angles')
+    factor=s2['B03'].shape[0]/s2['SZA'].shape[0]
+    s2['SZA']=read_sentinel2_safe_image.resample_image(s2['SZA'],factor,interpolation='bilinear')
+    s2['SAA']=read_sentinel2_safe_image.resample_image(s2['SAA'],factor,interpolation='bilinear')
+    s2['VZA']=read_sentinel2_safe_image.resample_image(s2['VZA'],factor,interpolation='bilinear')
+    s2['VAA']=read_sentinel2_safe_image.resample_image(s2['VAA'],factor,interpolation='bilinear')
+    #compute Relative Azimuth angle (RAA)
+    s2['RAA']=numpy.absolute(s2['SAA']-s2['VAA'])
+    #compute cos(angles)
+    print('Computing cosSZA, cosVZA and cosRAA')
+    s2['cosSZA']=numpy.cos(numpy.deg2rad(s2['SZA']))
+    s2['cosVZA']=numpy.cos(numpy.deg2rad(s2['VZA']))
+    s2['cosRAA']=numpy.cos(numpy.deg2rad(s2['RAA']))
+    
+    # select  sl2p input bands
+    # Scaling Surface Reflectance bands:/10000
+    print('Scaling Sentinel-2 bands\nSelecting sl2p input bands')
+    sl2p_inp={}
+    for band_id,band in enumerate(netOptions['inputBands']):
+        sl2p_inp.update({band:(s2[band]+netOptions['inputOffset'][band_id])*netOptions['inputScaling'][band_id]})
+        
+    # prepare SL2P input data    
+    sl2p_inp=numpy.stack([sl2p_inp[k] for k in sl2p_inp.keys()]) 
+    print('Done!')
+    return sl2p_inp   
+ 
+# determine if inputs fall in domain of algorithm
 def invalidInput(image,netOptions,colOptions):
     print('Generating sl2p input data flag')
     [d0,d1,d2]=image.shape
@@ -93,6 +93,7 @@ def invalidInput(image,netOptions,colOptions):
     flag=numpy.isin(image_format, sl2pDomain,invert=True)
     return flag.reshape(d1,d2)
 
+# determine if outputs fall in the nominal variation range of the variable 
 def invalidOutput(estimate,variableName):
     print('Generating sl2p output product flag')
     var_range=dictionariesSL2P.make_outputParams()[variableName]

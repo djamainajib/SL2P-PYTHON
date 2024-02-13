@@ -59,8 +59,8 @@ def make_net_options():
                 "description": 'Black sky albedo',
                 "variable": 6,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B03', 'B04', 'B05', 'B06', 'B07', 'B8A', 'B11', 'B12'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
             "S2_SR_10m": {
                 "Name": 'Albedo',
@@ -69,8 +69,8 @@ def make_net_options():
                 "description": 'Black sky albedo',
                 "variable": 6,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B02', 'B03', 'B04', 'B08'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
         },
         'fAPAR': {
@@ -81,8 +81,8 @@ def make_net_options():
                 "description": 'Fraction of absorbed photosynthetically active radiation',
                 "variable": 2,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B03', 'B04', 'B05', 'B06', 'B07', 'B8A', 'B11', 'B12'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
             "S2_SR_10m": {
                 "Name": 'fAPAR',
@@ -91,8 +91,8 @@ def make_net_options():
                 "description": 'Fraction of absorbed photosynthetically active radiation',
                 "variable": 2,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B02', 'B03', 'B04', 'B08'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
         },
         'fCOVER': {
@@ -103,8 +103,8 @@ def make_net_options():
                 "description": 'Fraction of canopy cover',
                 "variable": 3,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B03', 'B04', 'B05', 'B06', 'B07', 'B8A', 'B11', 'B12'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
             "S2_SR_10m": {
                 "Name": 'fCOVER',
@@ -113,8 +113,8 @@ def make_net_options():
                 "description": 'Fraction of canopy cover',
                 "variable": 3,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B02', 'B03', 'B04', 'B08'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
         },
         'LAI': {
@@ -125,8 +125,8 @@ def make_net_options():
                 "description": 'Leaf area index',
                 "variable": 1,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B03', 'B04', 'B05', 'B06', 'B07', 'B8A', 'B11', 'B12'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
             "S2_SR_10m": {
                 "Name": 'LAI',
@@ -135,8 +135,8 @@ def make_net_options():
                 "description": 'Leaf area index',
                 "variable": 1,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B02', 'B03', 'B04', 'B08'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
         },
         'CCC': {
@@ -147,8 +147,8 @@ def make_net_options():
                 "description": 'Canopy chlorophyll content',
                 "variable": 4,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B03', 'B04', 'B05', 'B06', 'B07', 'B8A', 'B11', 'B12'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
             "S2_SR_10m": {
                 "Name": 'CCC',
@@ -157,8 +157,8 @@ def make_net_options():
                 "description": 'Canopy chlorophyll content',
                 "variable": 4,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B02', 'B03', 'B04', 'B08'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
         },
         'CWC': {
@@ -169,8 +169,8 @@ def make_net_options():
                 "description": 'Canopy water content',
                 "variable": 5,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B03', 'B04', 'B05', 'B06', 'B07', 'B8A', 'B11', 'B12'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
             "S2_SR_10m": {
                 "Name": 'CWC',
@@ -179,32 +179,10 @@ def make_net_options():
                 "description": 'Canopy water content',
                 "variable": 5,
                 "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B02', 'B03', 'B04', 'B08'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
+                "inputScaling":    [1, 1, 1, 0.0001, 0.0001, 0.0001, 0.0001],
+                "inputOffset":     [0, 0, 0,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
             },
         },
-        'DASF': {
-            "S2_SR": {
-                "Name": 'DASF',
-                "errorName": 'errorDASF',
-                "maskName": 'maskDASF',
-                "description": 'Directional area scattering factor',
-                "variable": 7,
-                "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B03', 'B04', 'B05', 'B06', 'B07', 'B8A', 'B11', 'B12'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
-            },
-            "S2_SR_10m": {
-                "Name": 'DASF',
-                "errorName": 'errorDASF',
-                "maskName": 'maskDASF',
-                "description": 'Directional area scattering factor',
-                "variable": 7,
-                "inputBands":      ['cosVZA', 'cosSZA', 'cosRAA', 'B02', 'B03', 'B04', 'B08'],
-                "inputScaling":    [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001],
-                "inputOffset":     [-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000,-1000],
-            },
-        }
     }
     return(NET_OPTIONS)
 
@@ -242,10 +220,5 @@ def make_outputParams():
             'outputOffset': 0,
             'outputMax': 0.55
         },
-        'DASF': {
-            'outputScale': 1000,
-            'outputOffset': 0,
-            'outputMax': 1
-        }
     }
     return(outputParams)

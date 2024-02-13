@@ -1,16 +1,19 @@
 from tools import toolsNets
 import numpy 
 
-
+# re-order asset/nets (pkl file) according to the variale ID ('tabledata3'),
+# then, build the different nets using makeNets function
 def makeNetVars(asset, numNets, variableNum): 
     filtered_features =[ff for ff in asset['features'] if ff['properties']['tabledata3']==variableNum+1]
     netVars = [makeNets(filtered_features, netNum) for netNum in range(numNets)]
     return netVars
 
-# read coefficients of a network from csv EE asset
+# read coefficients of a network from pkl files ./nets
 def getCoefs(netData, ind):
     return netData['properties']['tabledata%s'%(ind)]
 
+# parse the pkl file to buit SL2P nets for the different vegetation variables
+# assume a two hidden layer network with tansig functions but allow for variable nodes per layer
 def makeNets(feature, M):
     # get the requested network and initialize the created network
     netData = feature[M]
@@ -65,10 +68,13 @@ def makeNets(feature, M):
     net["outBias"] = [getCoefs(netData,ind) for ind in range(start,end+1)] 
     return [net]
 
+# select the appropriate net for a given 'variable', then apply it by using applyNet function 
 def wrapperNNets(network, netOptions,imageInput):
     netList = network[netOptions['variable']-1]
     return applyNet(imageInput,netList)
 
+# apply net on a 3D dataset (K.N.M) of Surface reflectance and acquisition geometry 
+# to have an estimate of a vegetation variable/uncertainty 
 def applyNet(inp,net):
     [d0,d1,d2]=inp.shape
     inp=inp.reshape(d0,d1*d2)
