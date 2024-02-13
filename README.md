@@ -4,7 +4,7 @@
 SL2P-PYTHON is a python implementation of the Simplified Level 2 Product Prototype Processor (SL2P) in [Weiss and Baret (2016)](https://step.esa.int/docs/extra/ATBD_S2ToolBox_L2B_V1.1.pdf) It corresponds to the algorithm implemented in the [LEAf-Toolbox](https://github.com/rfernand387/LEAF-Toolbox) that corrects for bugs in the implemention of SL2P within the European Space Agency Sentinel 2 Toolbox as documented in [Fernandes et al. 2023](https://www.sciencedirect.com/science/article/pii/S0034425723001517?via%3Dihub).
 
 
-SL2P-PYTHON is designed to estimate vegetation biophysical variables (Table 1) from Sentinel-2 MSI L2A images. 
+SL2P-PYTHON is designed to estimate vegetation biophysical variables (Table 1) at 10 or 20 meters spatial resolution from Sentinel-2 MSI L2A images. 
 
 Required inputs
 ---------------
