@@ -31,21 +31,16 @@ SL2P-PYTHON output layers (for one needed vegetation variable)
 |SL2P output flag (Quality Code)               |	0: Valid, 1: estimates out of the nominal variation range|
 
 
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
-
-
-
 Vegetation variables supported by SL2P-PYTHON
-Vegetation variable	Description	Unit	Nominal variation range
-LAI	Half the total green foliage area per horizontal ground area.	m2 foliage /m2 ground	0 - 8
-fCOVER	Fraction of nadir canopy cover	ratio	0 – 1
-fAPAR	Fraction of absorbed clear sky PAR at 10:30 am local time	ratio	0 – 1
-CCC	Canopy chlorophyll A+B content	g/m2	0 - 600
-CWC	Canopy water content	g/m2	0 – 1
-Albedo	Black sky shortwave albedo at 10:30am local time	ratio	0 – 0.2
+
+|Vegetation variable	|Description	|Unit	|Nominal variation range|
+|---------------------|-------------|-----|-----------------------|
+|LAI	|Half the total green foliage area per horizontal ground area.	|m2 foliage /m2 ground	|0 - 8|
+|fCOVER	|Fraction of nadir canopy cover	|ratio	|0 – 1|
+|fAPAR	|Fraction of absorbed clear sky PAR at 10:30 am local time	|ratio	|0 – 1|
+|CCC	|Canopy chlorophyll A+B content	|g/m2	|0 - 600|
+|CWC	|Canopy water content	|g/m2	|0 – 1|
+|Albedo	|Black sky shortwave albedo at 10:30am local time	|ratio	|0 – 0.2|
 
 
   
