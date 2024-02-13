@@ -14,19 +14,10 @@ Required inputs
 
 Outputs
 -------
-GeoTIFF with 4 layers (Table 1):
+SL2P-PYTHON is designed to estimate five vegetation variables (Table 1). 
+Products are composed of 4-layers and exported in GeoTIFF format (Table 2). 
 
-<font size="8">Table 1: SL2P-PYTHON output layers (for one needed vegetation variable)</font>
-
-|Layer                                         |	Description                                              |
-|----------------------------------------------|-----------------------------------------------------------|
-|Vegetation variable estimate	                 |Map of vegetation variable                                 | 
-|Uncertainty of vegetation variable estimates	 |Map of the uncertainty of vegetation variable              |
-|SL2P input flag (Quality Code)	               |0: Valid, 1: SL2P input out of SL2P calibration domain     |
-|SL2P output flag (Quality Code)               |	0: Valid, 1: estimates out of the nominal variation range|
-
-
-<font size="8">Table 2: Vegetation variables supported by SL2P-PYTHON</font>
+<font size="8">Table 1: Vegetation variables supported by SL2P-PYTHON</font>
 
 |Vegetation variable	|Description	|Unit	|Nominal variation range|
 |---------------------|-------------|:-----:|:-----------------------:|
@@ -36,6 +27,19 @@ GeoTIFF with 4 layers (Table 1):
 |CCC	|Canopy chlorophyll A+B content	|$g / m^{2}$	|0 - 600|
 |CWC	|Canopy water content	|$g / m^{2}$	|0 – 1|
 |Albedo	|Black sky shortwave albedo at 10:30am local time	|Ratio	|0 – 0.2|
+
+
+<font size="8">Table 2: SL2P-PYTHON output layers (for one needed vegetation variable)</font>
+
+|Layer                                         |	Description                                              |
+|----------------------------------------------|-----------------------------------------------------------|
+|Vegetation variable estimate	                 |Map of vegetation variable                                 | 
+|Uncertainty of vegetation variable estimates	 |Map of the uncertainty of vegetation variable              |
+|SL2P input flag (Quality Code)	               |0: Valid, 1: SL2P input out of SL2P calibration domain     |
+|SL2P output flag (Quality Code)               |	0: Valid, 1: estimates out of the nominal variation range|
+
+
+
 
 
   
